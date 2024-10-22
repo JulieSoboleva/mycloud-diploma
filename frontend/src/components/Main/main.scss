@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+  
+.header__space {
+    flex-grow: 1;
+    min-width: 100px;
+    background-color: #f5f5f5;
+}
+
+.home {
+    font-size: 24px;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    will-change: filter;
+    transition: filter 300ms;
+}
+  
+.home:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2em #464dd1aa);
+}
+  
+.home.react:hover {
+    filter: drop-shadow(0 0 2em #98e2f7aa);
+}
+
+.svg {
+    enable-background: new 0 0 3873 3873;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #1677ff;
+} 
+
+.st1 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #FFFFFF;
+}

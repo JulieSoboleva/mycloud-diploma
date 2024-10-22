@@ -1,0 +1,16 @@
+.details {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 50px;
+}
+  
+.details__info {
+    display: flex;
+    text-align: center;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 20px;
+    margin: 0 auto;
+}
