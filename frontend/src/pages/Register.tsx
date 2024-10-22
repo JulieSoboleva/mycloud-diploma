@@ -150,9 +150,23 @@ export default function Register() {
 
         <Form.Item<FieldType>
           label='Подтверждение пароля'
-          name='password'
+          name='repeat'
+          dependencies={['password']}
           wrapperCol={{ sm: 24 }}
-          rules={[{ required: true, message: 'Пожалуйста, повторите введённый пароль' }]}
+          rules={[
+            { 
+              required: true,
+              message: 'Пожалуйста, повторите введённый пароль' 
+            },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('password') === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(new Error('Пароли не совпадают'));
+              },
+            }),
+          ]}
         >
           <Input.Password />
         </Form.Item>
