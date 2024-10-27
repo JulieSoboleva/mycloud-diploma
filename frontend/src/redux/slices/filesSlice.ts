@@ -38,6 +38,9 @@ const FilesSlice = createSlice({
       .addCase(getFilesList.fulfilled, (state, action) => {
         state.isLoading = false;
         state.filesList = action.payload;
+        state.filesList.forEach((file) => {
+          file.key = file.id.toString();
+        });
       })
       .addCase(getFilesList.rejected, (state, action) => {
         state.isLoading = false;

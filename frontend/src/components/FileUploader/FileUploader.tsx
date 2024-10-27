@@ -56,6 +56,8 @@ export default function FileUploader({ setShowForm }: FileUploaderProps) {
       <input
         id='file'
         type='file'
+        accept='.txt,.doc,.docx,.pdf,.xls,.xlsx,.csv,.bmp,.jpg,.jpeg,.png,.gif,.tiff,.xml'
+        title='Допустимые форматы: txt, doc, docx, pdf, xls, xlsx, csv, bmp, jpg, jpeg, png, gif, tiff, xml'
         onChange={handleInputFileChange}
         style={{ marginTop: '20px' }}
       />

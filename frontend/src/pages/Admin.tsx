@@ -57,7 +57,8 @@ export default function Admin() {
         const totalFilesSize = files.reduce((total, file) => total + file.size, 0);
         const formattedSize = formatFileSize(totalFilesSize);
         return {str_size: formattedSize ?? "", size: totalFilesSize};
-    };    
+    };
+
     const handleChooseUser = (user: IUser) => {
         dispatch(setStorageOwner(user));
         navigate("/storage");
@@ -144,36 +145,36 @@ export default function Admin() {
           render: (user: IUser) => (
             <Flex justify="space-evenly" align="center">
               <FloatButton.Group
-                key='delete_group'
+                key='open_group'
                 shape='square'
                 placement='left'
                 style={folderStyle}
-                icon={<LeftOutlined key='delete' />}
+                icon={<LeftOutlined key='array' />}
               >
                 <Tooltip 
                   placement='left'
                   title='Открыть'
                 >
                   <FloatButton 
-                    key='open'
+                    key='open_button'
                     icon={<FolderOpenOutlined/>} 
                     onClick={() => handleChooseUser(user)} />
                 </Tooltip>
               </FloatButton.Group>
               
               <FloatButton.Group
-                key='open_group'
+                key='delete_group'
                 shape='square'
                 placement='left'
                 style={deleteStyle}
-                icon={<LeftOutlined key='open' />}
+                icon={<LeftOutlined key='array2' />}
               >
                 <Tooltip 
                   placement='right'
                   title='Удалить'
                 >
                   <FloatButton
-                    key='delete'
+                    key='delete_button'
                     icon={<DeleteOutlined/>}
                     onClick={() => handleDeleteUser(user.id)} />
                 </Tooltip>

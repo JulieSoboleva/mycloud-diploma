@@ -234,6 +234,7 @@ const UsersSlice = createSlice({
       .addCase(getUsersList.fulfilled, (state, action) => {
         state.isLoading = false;
         state.usersList = action.payload;
+        state.usersList.forEach((user) => user.key = user.id.toString());
       })
       .addCase(getUsersList.rejected, (state, action) => {
         state.isLoading = false;

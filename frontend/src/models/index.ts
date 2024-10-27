@@ -7,6 +7,7 @@ export interface IError {
 
 export interface IFile {
     id: number,
+    key: string,
     file_name: string,
     comment: string,
     size: number,
