@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { 
   clearError,
-  loginUser,
   setStorageOwner,
   usersState 
 } from '../redux/slices/usersSlice'
 import { ILoginFormData } from '../models'
+import { loginUser } from '../services/userServices'
 import { useAppDispatch, useAppSelector } from '../hooks'
 
 interface FieldType {

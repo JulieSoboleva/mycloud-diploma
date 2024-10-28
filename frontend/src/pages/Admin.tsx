@@ -6,13 +6,11 @@ import { formatFileSize, useAppDispatch, useAppSelector } from '../hooks'
 import {
     clearUsersList,
     clearError,
-    deleteUser,
-    getUsersList,
     setStorageOwner,
-    updateUser,
     usersState,
 } from '../redux/slices/usersSlice'
 import { IFilesSize, IUser, IUserForAdmin } from '../models'
+import { deleteUser, getUsersList, updateUser } from '../services/userServices'
 
 const folderStyle: React.CSSProperties = {
     position: 'absolute',

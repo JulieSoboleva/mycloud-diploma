@@ -7,26 +7,9 @@ const rootReducer = combineReducers({
     files: FilesSlice,
 });
 
-
 export const store = configureStore({
-    reducer: rootReducer, //persistReducer(persistConfig, rootReducer),
-    // middleware: (getDefaultMiddleware) =>
-    //     getDefaultMiddleware({ 
-    //         thunk: false,
-    //         serializableCheck: {
-    //             ignoredActions: [
-    //                 'persist/PERSIST',
-    //                 'persist/REHYDRATE',
-    //                 'persist/PURGE',
-    //                 'persist/REGISTER',
-    //                 'persist/FLUSH',
-    //                 'persist/PAUSE'
-    //             ],
-    //         },
-    //     }),
+    reducer: rootReducer,
 });
-
-// export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

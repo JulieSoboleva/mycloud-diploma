@@ -1,13 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { usersState } from '../../redux/slices/usersSlice'
-import {
-  filesState,
-  getFilesList,
-  uploadFile,
-} from '../../redux/slices/filesSlice'
-import { useAppDispatch, useAppSelector } from '../../hooks'
 import { Button, Flex, Input } from 'antd'
 import { CloudUploadOutlined } from '@ant-design/icons'
+import { usersState } from '../../redux/slices/usersSlice'
+import { filesState } from '../../redux/slices/filesSlice'
+import { useAppDispatch, useAppSelector } from '../../hooks'
+import { getFilesList, uploadFile } from '../../services/fileServices'
 
 const { TextArea } = Input;
 
@@ -63,7 +60,7 @@ export default function FileUploader({ setShowForm }: FileUploaderProps) {
       />
       <div>
         <TextArea
-          rows={4}
+          rows={1}
           placeholder='Комментарий к файлу'
           value={comment}
           onChange={(e) => setComment(e.target.value)}

@@ -8,18 +8,14 @@ import {
 } from '@ant-design/icons'
 import { usersState } from '../redux/slices/usersSlice'
 import {
-  changeFile,
   clearError,
   clearFilesList,
-  deleteFile,
-  downloadFile,
-  filesState,
-  getFileLink,
-  getFilesList,
+  filesState
 } from '../redux/slices/filesSlice'
 import { formatFileSize, useAppDispatch, useAppSelector } from '../hooks'
 import { IChangeFileData, IDownloadFileData, IFile } from '../models'
 import DownloadSection from '../components/DownloadSection/DownloadSection'
+import { changeFile, deleteFile, downloadFile, getFileLink, getFilesList } from '../services/fileServices'
 
 function copyToClipboard(special_link: string) {
   const textArea = document.createElement('textarea');

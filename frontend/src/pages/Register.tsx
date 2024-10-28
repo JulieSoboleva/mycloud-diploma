@@ -1,9 +1,10 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import type { FormProps } from 'antd'
 import { Button, Card, Form, Input, message } from 'antd'
-import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { clearError, registerUser, usersState } from '../redux/slices/usersSlice'
-import { useNavigate } from 'react-router-dom'
+import { registerUser } from '../services/userServices'
+import { clearError, usersState } from '../redux/slices/usersSlice'
 
 interface FieldType {
   userName?: string,

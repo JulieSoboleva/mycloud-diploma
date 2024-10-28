@@ -2,8 +2,9 @@ import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Layout, Flex, Button, ConfigProviderProps } from 'antd'
 import { useState } from 'react'
 import './main.scss'
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { logoutUser, usersState } from '../../redux/slices/usersSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks'
+import { usersState } from '../../redux/slices/usersSlice'
+import { logoutUser } from '../../services/userServices'
 
 const { Header, Footer, Content } = Layout;
 
@@ -44,7 +45,6 @@ export const Main = () => {
   const { currentUser } = useAppSelector(usersState);
   const navigate = useNavigate();
   const location = useLocation();
-  // const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [size] = useState<SizeType>('large');
   const dispatch = useAppDispatch();
   type SizeType = ConfigProviderProps['componentSize'];
